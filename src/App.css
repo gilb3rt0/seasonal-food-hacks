@@ -1,4 +1,8 @@
+* {
+  background-color: rgb(187, 58, 58);
+}
+
 svg {
-    font-size: 10rem;
-    fill: red;
+  font-size: 10rem;
+  fill: whitesmoke;
 }

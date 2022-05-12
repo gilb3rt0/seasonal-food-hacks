@@ -1,3 +1,4 @@
+export { default as Apple } from "./Apple";
 export { default as Artichoke } from "./Artichoke";
 export { default as Asparagus } from "./Asparagus";
 export { default as Blackberry } from "./Blackberry";
@@ -31,6 +32,7 @@ export { default as PointedCabbage } from "./PointedCabbage";
 export { default as Pumpkin } from "./Pumpkin";
 export { default as Quitte } from "./Quitte";
 export { default as Raddicchio } from "./Raddicchio";
+export { default as Raspberry } from "./Raspberry";
 export { default as RedCabbage } from "./RedCabbage";
 export { default as RedRadish } from "./RedRadish";
 export { default as Rucula } from "./Rucula";

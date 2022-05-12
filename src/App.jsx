@@ -1,105 +1,16 @@
 import React from "react";
 import "./App.css";
-import {
-  Artichoke,
-  Asparagus,
-  Chestnut,
-  Kale,
-  Pear,
-  Salsify,
-  Cucumber,
-  LabsLettuce,
-  Peas,
-  Spinach,
-  Blackberry,
-  CurlyEndive,
-  Leek,
-  PointedCabbage,
-  StoneFruit,
-  Blueberries,
-  Currants,
-  Lettuce,
-  Pumpkin,
-  Strawberry,
-  Broccoli,
-  EndiveSalad,
-  LolloRosso,
-  Quitte,
-  Tomato,
-  Carrot,
-  Fennel,
-  Mangold,
-  Raddicchio,
-  WhiteCabbage,
-  Cauliflower,
-  Grapes,
-  NapaCabbage,
-  RedCabbage,
-  Witloof,
-  Celery,
-  Hazelnut,
-  Onion,
-  RedRadish,
-  Zucchini,
-  Cherry,
-  IcebergSalad,
-  Paprika,
-  Rucula
-} from "./components/foodiconsSVG/index.js";
+import FoodIcons from "./components/foodIcons";
 
 
-const IconList = { 
-  artichoke: Artichoke,
-  chestnut: Chestnut,
-  kale: Kale,
-  pear: Pear,
-  salsify: Salsify/* ,
-  Asparagus,
-  Cucumber,
-  LabsLettuce,
-  Peas,
-  Spinach,
-  Blackberry,
-  CurlyEndive,
-  Leek,
-  PointedCabbage,
-  StoneFruit,
-  Blueberries,
-  Currants,
-  Lettuce,
-  Pumpkin,
-  Strawberry,
-  Broccoli,
-  EndiveSalad,
-  LolloRosso,
-  Quitte,
-  Tomato,
-  Carrot,
-  Fennel,
-  Mangold,
-  Raddicchio,
-  WhiteCabbage,
-  Cauliflower,
-  Grapes,
-  NapaCabbage,
-  RedCabbage,
-  Witloof,
-  Celery,
-  Hazelnut,
-  Onion,
-  RedRadish,
-  Zucchini,
-  Cherry,
-  IcebergSalad,
-  Paprika,
-  Rucula */ }
-function App(props) {
-  const TestComp = "RedRadish"
+function App() {
 
+ 
   return (
-    <TestComp/>
-  )
-
-  }
+    <div>
+      <FoodIcons/>
+    </div>
+  );
+}
 
 export default App;
