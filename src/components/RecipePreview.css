@@ -1,0 +1,28 @@
+#main-recipe-container {
+  margin: 2rem;
+}
+
+#img-container {
+  text-align: center;
+}
+#recipe-preview-img {
+  max-width: 15rem;
+  height: auto;
+}
+
+#recipe-preview-title {
+  text-align: center;
+}
+
+#btn-container {
+  text-align: center;
+}
+
+#recipe-btn {
+  margin-top: 2rem;
+  background-color: #464e2e;
+}
+
+#link-recipe {
+  text-decoration: none;
+}

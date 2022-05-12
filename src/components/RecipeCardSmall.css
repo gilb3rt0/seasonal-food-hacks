@@ -1,0 +1,19 @@
+#recipe-container {
+  width: 6rem;
+  height: 6rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+#recipe-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.6rem;
+  margin-block-start: 0rem;
+  margin-block-end: 0;
+  word-wrap: break-word;
+}
+
+#recipe-img {
+  width: 6rem;
+  height: 4rem;
+}

@@ -1,12 +1,18 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import RecipeSuggestions from "./pages/RecipeSuggestions";
 import SeasonIngredients from "./pages/SeasonIngredients";
 
 function App() {
   return (
-    <div>
-      <p>hello world! we are making you a better place.</p>
-      <SeasonIngredients />
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<RecipeSuggestions />} />
+          <Route path="/recipes" element={<RecipeSuggestions />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
