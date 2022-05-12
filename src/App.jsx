@@ -1,14 +1,105 @@
 import React from "react";
-import './App.css'
-import SvgArtichoke from "./components/foodicons/Artichoke";
+import "./App.css";
+import {
+  Artichoke,
+  Asparagus,
+  Chestnut,
+  Kale,
+  Pear,
+  Salsify,
+  Cucumber,
+  LabsLettuce,
+  Peas,
+  Spinach,
+  Blackberry,
+  CurlyEndive,
+  Leek,
+  PointedCabbage,
+  StoneFruit,
+  Blueberries,
+  Currants,
+  Lettuce,
+  Pumpkin,
+  Strawberry,
+  Broccoli,
+  EndiveSalad,
+  LolloRosso,
+  Quitte,
+  Tomato,
+  Carrot,
+  Fennel,
+  Mangold,
+  Raddicchio,
+  WhiteCabbage,
+  Cauliflower,
+  Grapes,
+  NapaCabbage,
+  RedCabbage,
+  Witloof,
+  Celery,
+  Hazelnut,
+  Onion,
+  RedRadish,
+  Zucchini,
+  Cherry,
+  IcebergSalad,
+  Paprika,
+  Rucula
+} from "./components/foodiconsSVG/index.js";
 
-function App() {
+
+const IconList = { 
+  artichoke: Artichoke,
+  chestnut: Chestnut,
+  kale: Kale,
+  pear: Pear,
+  salsify: Salsify/* ,
+  Asparagus,
+  Cucumber,
+  LabsLettuce,
+  Peas,
+  Spinach,
+  Blackberry,
+  CurlyEndive,
+  Leek,
+  PointedCabbage,
+  StoneFruit,
+  Blueberries,
+  Currants,
+  Lettuce,
+  Pumpkin,
+  Strawberry,
+  Broccoli,
+  EndiveSalad,
+  LolloRosso,
+  Quitte,
+  Tomato,
+  Carrot,
+  Fennel,
+  Mangold,
+  Raddicchio,
+  WhiteCabbage,
+  Cauliflower,
+  Grapes,
+  NapaCabbage,
+  RedCabbage,
+  Witloof,
+  Celery,
+  Hazelnut,
+  Onion,
+  RedRadish,
+  Zucchini,
+  Cherry,
+  IcebergSalad,
+  Paprika,
+  Rucula */ }
+function App(props) {
+  const TestComp = "RedRadish"
+
   return (
-    <div>
-      <p>hello world! we are making you a better place.</p>
-      <SvgArtichoke height={50}/>
-    </div>
-  );
-}
+    <TestComp/>
+  )
+
+  }
 
 export default App;
