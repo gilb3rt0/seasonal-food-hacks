@@ -1,3 +1,3 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faApp}
+import { faAppleWhole, faCarrot, faLemon  } from "@fortawesome/free-solid-svg-icons";
