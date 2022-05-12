@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import axios from "axios";
+import SeasonIngredients from "./pages/SeasonIngredients";
+import Seasonal from "./components/Seasonsal";
 
 function App() {
   return (
     <div>
-      {spring.map((e) => (
-        <p key={e.id}>{e.name}</p>
-      ))}
+      <p>hello world! we are making you a better place.</p>
+      <SeasonIngredients />
     </div>
   );
 }
