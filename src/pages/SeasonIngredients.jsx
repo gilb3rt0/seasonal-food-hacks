@@ -25,11 +25,11 @@ export default function SeasonIngredients() {
       .get(
         `https://edamam-recipe-search.p.rapidapi.com/search?q=${searchTerm}`,
         {
-          headers: {
+          /* headers: {
             "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com",
             "X-RapidAPI-Key":
-              "7bc5264ffemsh61b3494612049efp18b2c0jsnab8c5ef296f4",
-          },
+              To Do: store in env. variable,
+          }, */
         }
       )
       .then((response) => {
