@@ -1,6 +1,7 @@
 import { Box, Button, Divider } from "@mui/material";
 import React from "react";
 import IngredientCard from "../components/IngredientCard";
+import Seasonal from "../components/Seasonsal";
 
 export default function SeasonIngredients() {
   const selectedIngredientsBoxStyle = {
@@ -38,22 +39,7 @@ export default function SeasonIngredients() {
       <Divider variant="middle" />
       {/* BOX FOR AVAILABLE INGREDIENTS OF THIS SEASON*/}
       <Box sx={selectedIngredientsBoxStyle}>
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
-        <IngredientCard />
+        <Seasonal />
       </Box>
     </div>
   );

@@ -1,7 +1,5 @@
 import React from "react";
-import axios from "axios";
 import SeasonIngredients from "./pages/SeasonIngredients";
-import Seasonal from "./components/Seasonsal";
 
 function App() {
   return (

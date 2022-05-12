@@ -1,28 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import IngredientCard from "./IngredientCard";
+import { Container } from "@mui/material";
 
 function Seasonal() {
-  const [spring, setSpring] = useState([]);
-  const summer = [];
-  const autumn = [];
-  const winter = [];
+  const [seasonal, setSeasonal] = useState([]);
 
   useEffect(() => {
     axios
       .get("http://localhost:3002/fruits")
       .then((response) => {
         console.log(response.data);
+        const d = new Date();
+        const currentMonth = d.getMonth();
+        console.log(currentMonth);
         response.data.forEach((item) => {
-          if (
-            item.availability.includes("mar") ||
-            item.availability.includes("apr") ||
-            item.availability.includes("jun")
-          ) {
-            console.log(item);
-            setSpring((prev) => {
+          if (item.availability.includes(currentMonth)) {
+            setSeasonal((prev) => {
               return [...prev, item];
             });
-            console.log(spring);
           }
         });
       })
@@ -30,11 +26,20 @@ function Seasonal() {
   }, []);
 
   return (
-    <div>
-      {spring.map((e) => (
-        <p key={e.id}>{e.name}</p>
-      ))}
-    </div>
+    <>
+      <Container
+        style={{
+          width: "70vw",
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "10px",
+        }}
+      >
+        {seasonal.map((e) => (
+          <IngredientCard key={e.id} name={e.name} />
+        ))}
+      </Container>
+    </>
   );
 }
 

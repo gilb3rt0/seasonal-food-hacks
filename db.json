@@ -3,115 +3,92 @@
     {
       "id": 1,
       "name": "apples",
-      "availability": [
-        "jan",
-        "feb",
-        "mar",
-        "apr",
-        "may",
-        "jun",
-        "jul",
-        "aug",
-        "sep",
-        "oct",
-        "nov",
-        "dec"
-      ]
+      "availability": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     },
     {
       "id": 2,
       "name": "apricots",
-      "availability": ["jun", "jul", "aug"]
+      "availability": [5, 6, 7]
     },
     {
       "id": 3,
       "name": "pears",
-      "availability": ["jan", "feb", "mar", "aug", "sep", "oct", "nov", "dec"]
+      "availability": [0, 1, 2, 7, 8, 9, 10, 11]
     },
     {
       "id": 4,
       "name": "blackberries",
-      "availability": ["jun", "jul", "aug", "sep", "oct"]
+      "availability": [5, 6, 7, 8, 9]
     },
     {
       "id": 5,
       "name": "strawberries",
-      "availability": [
-        "apr",
-        "may",
-        "jun",
-        "jul",
-        "aug",
-        "sep",
-        "oct",
-        "nov",
-        "dec"
-      ]
+      "availability": [3, 4, 5, 6, 7, 8, 9, 10, 11]
     },
     {
       "id": 6,
       "name": "blueberries",
-      "availability": ["jun", "jul", "aug", "sep", "oct"]
+      "availability": [5, 6, 7, 8, 9]
     },
     {
       "id": 7,
       "name": "raspberries",
-      "availability": ["may", "jun", "jul", "aug", "sep", "oct", "nov"]
+      "availability": [4, 5, 6, 7, 8, 9, 10]
     },
     {
       "id": 8,
       "name": "red currants",
-      "availability": ["jun", "jul", "aug", "sep", "oct"]
+      "availability": [5, 6, 7, 8, 9]
     },
     {
       "id": 9,
       "name": "black currants",
-      "availability": ["jun", "jul", "aug", "sep", "oct"]
+      "availability": [5, 6, 7, 8, 9]
     },
     {
       "id": 10,
       "name": "cherries",
-      "availability": ["jun", "jul", "aug"]
+      "availability": [5, 6, 7]
     },
     {
       "id": 11,
       "name": "mirabelle plums",
-      "availability": ["jul", "aug", "sep", "oct"]
+      "availability": [6, 7, 8, 9]
     },
     {
       "id": 12,
       "name": "peaches",
-      "availability": ["jul", "aug", "sep"]
+      "availability": [6, 7, 8]
     },
     {
       "id": 13,
       "name": "nectarines",
-      "availability": ["jul", "aug", "sep"]
+      "availability": [6, 7, 8]
     },
     {
       "id": 14,
       "name": "plums",
-      "availability": ["jun", "jul", "aug", "sep", "oct"]
+      "availability": [5, 6, 7, 8, 9]
     },
     {
       "id": 15,
       "name": "cranberries",
-      "availability": ["jul", "aug", "sep", "oct"]
+      "availability": [6, 7, 8, 9]
     },
     {
       "id": 16,
       "name": "quince",
-      "availability": ["oct", "nov", "dec"]
+      "availability": [9, 10, 11]
     },
     {
       "id": 17,
       "name": "gooseberries",
-      "availability": ["jun", "jul", "aug"]
+      "availability": [5, 6, 7]
     },
     {
       "id": 18,
       "name": "grapes",
-      "availability": ["aug", "sep", "oct"]
+      "availability": [7, 8, 9]
     }
   ],
   "vegetables": [{}],

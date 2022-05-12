@@ -7,8 +7,9 @@ import {
   Typography,
 } from "@mui/material";
 
-export default function IngredientCard() {
+export default function IngredientCard(props) {
   const [checkIngredientCard, setCheckIngredientCard] = useState(true);
+  const { name } = props;
   const handleClick = () => {
     setCheckIngredientCard(!checkIngredientCard);
     console.log(checkIngredientCard);
@@ -16,8 +17,8 @@ export default function IngredientCard() {
 
   const styleDefault = {
     borderRadius: "15px",
-    height: "80px",
-    width: "80px",
+    height: "100px",
+    width: "100px",
     backgroundColor: "#464E2E",
     color: "#f2f2f2",
     display: "flex",
@@ -28,8 +29,8 @@ export default function IngredientCard() {
 
   const styleSelected = {
     borderRadius: "15px",
-    height: "80px",
-    width: "80px",
+    height: "100px",
+    width: "100px",
     backgroundColor: "#B0B3B8",
     display: "flex",
     justifyContent: "center",
@@ -61,7 +62,7 @@ export default function IngredientCard() {
             image="https://icon-library.com/images/vegetable-icon-png/vegetable-icon-png-19.jpg"
           />
 
-          <Typography>Ingredient</Typography>
+          <Typography>{name}</Typography>
         </CardContent>
       </CardActionArea>
     </Card>
