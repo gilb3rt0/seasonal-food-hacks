@@ -1,0 +1,4 @@
+{
+  "/fruits/spring": "/fruits?availability=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]",
+  "/fruits/summer": "/fruits?availability=:category"
+}

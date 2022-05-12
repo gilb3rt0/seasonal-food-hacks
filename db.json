@@ -1,0 +1,135 @@
+{
+  "fruits": [
+    {
+      "id": 1,
+      "name": "apples",
+      "availability": [
+        "jan",
+        "feb",
+        "mar",
+        "apr",
+        "may",
+        "jun",
+        "jul",
+        "aug",
+        "sep",
+        "oct",
+        "nov",
+        "dec"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "apricots",
+      "availability": ["jun", "jul", "aug"]
+    },
+    {
+      "id": 3,
+      "name": "pears",
+      "availability": ["jan", "feb", "mar", "aug", "sep", "oct", "nov", "dec"]
+    },
+    {
+      "id": 4,
+      "name": "blackberries",
+      "availability": ["jun", "jul", "aug", "sep", "oct"]
+    },
+    {
+      "id": 5,
+      "name": "strawberries",
+      "availability": [
+        "apr",
+        "may",
+        "jun",
+        "jul",
+        "aug",
+        "sep",
+        "oct",
+        "nov",
+        "dec"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "blueberries",
+      "availability": ["jun", "jul", "aug", "sep", "oct"]
+    },
+    {
+      "id": 7,
+      "name": "raspberries",
+      "availability": ["may", "jun", "jul", "aug", "sep", "oct", "nov"]
+    },
+    {
+      "id": 8,
+      "name": "red currants",
+      "availability": ["jun", "jul", "aug", "sep", "oct"]
+    },
+    {
+      "id": 9,
+      "name": "black currants",
+      "availability": ["jun", "jul", "aug", "sep", "oct"]
+    },
+    {
+      "id": 10,
+      "name": "cherries",
+      "availability": ["jun", "jul", "aug"]
+    },
+    {
+      "id": 11,
+      "name": "mirabelle plums",
+      "availability": ["jul", "aug", "sep", "oct"]
+    },
+    {
+      "id": 12,
+      "name": "peaches",
+      "availability": ["jul", "aug", "sep"]
+    },
+    {
+      "id": 13,
+      "name": "nectarines",
+      "availability": ["jul", "aug", "sep"]
+    },
+    {
+      "id": 14,
+      "name": "plums",
+      "availability": ["jun", "jul", "aug", "sep", "oct"]
+    },
+    {
+      "id": 15,
+      "name": "cranberries",
+      "availability": ["jul", "aug", "sep", "oct"]
+    },
+    {
+      "id": 16,
+      "name": "quince",
+      "availability": ["oct", "nov", "dec"]
+    },
+    {
+      "id": 17,
+      "name": "gooseberries",
+      "availability": ["jun", "jul", "aug"]
+    },
+    {
+      "id": 18,
+      "name": "grapes",
+      "availability": ["aug", "sep", "oct"]
+    }
+  ],
+  "vegetables": [{}],
+  "nuts": [
+    {
+      "id": 1,
+      "name": "chestnuts",
+      "availability": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0]
+    },
+    {
+      "id": 2,
+      "name": "hazelnuts",
+      "availability": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0]
+    },
+    {
+      "id": 3,
+      "name": "walnuts",
+      "availability": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0]
+    }
+  ]
+}
