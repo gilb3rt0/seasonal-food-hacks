@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Button, Divider } from "@mui/material";
 import IngredientCard from "../components/IngredientCard";
+import Seasonal from "../components/Seasonsal";
+import { ConstructionOutlined } from "@mui/icons-material";
 
-export default function SeasonIngredients() {
+function SeasonIngredients() {
   const [results, setResults] = useState([]);
   const [seasonal, setSeasonal] = useState([]);
   const [currentIngredients, setCurrentIngredients] = useState([]);
@@ -97,6 +99,34 @@ export default function SeasonIngredients() {
     marginTop: "1rem",
   };
 
+  const [recipes, setRecipes] = useState();
+  const [recipesLoaded, setRecipesLoaded] = useState(false);
+
+  // just for testing
+  const searchTerm = "potatoes";
+
+  const handleClick = () => {
+    axios
+      .get(
+        `https://edamam-recipe-search.p.rapidapi.com/search?q=${searchTerm}`,
+        {
+          /* headers: {
+            "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com",
+            "X-RapidAPI-Key":
+              To Do: store in env. variable,
+          }, */
+        }
+      )
+      .then((response) => {
+        setRecipes(response.data.hits);
+        setRecipesLoaded(true);
+      });
+  };
+
+  console.log(recipes, recipesLoaded);
+
+  // To Do: Build the context to store recipe results
+
   return (
     <div
       style={{
@@ -116,9 +146,9 @@ export default function SeasonIngredients() {
         ))}
       </Box>
       <Button
+        onClick={handleClick}
         sx={{ width: "150px", borderRadius: "20px" }}
         variant="contained"
-        onClick={clickSearch}
       >
         FIND RECIPES
       </Button>
@@ -134,3 +164,4 @@ export default function SeasonIngredients() {
     </div>
   );
 }
+export default SeasonIngredients
