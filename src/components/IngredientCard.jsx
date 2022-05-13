@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import "./IngredientCard.css";
 import FoodIconList from "./foodIconList";
-// import * as props from '../assets/images/food-icons'
 export default function IngredientCard(props) {
   const [checkIngredientCard, setCheckIngredientCard] = useState(true);
   const { name, id } = props;
@@ -69,9 +68,9 @@ export default function IngredientCard(props) {
             flexDirection: "column",
           }}
         >
-            <div onClick={handleClick} id={id}>
-            {React.createElement(FoodIconList[name],  null)}
-            </div>
+          <div onClick={handleClick} id={id}>
+            {React.createElement(FoodIconList[name], null)}
+          </div>
 
           <Typography
             id={id}
