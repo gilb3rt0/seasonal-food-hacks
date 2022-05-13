@@ -4,7 +4,7 @@ import axios from "axios";
 import { Box, Button, Divider } from "@mui/material";
 import IngredientCard from "../components/IngredientCard";
 import { RecipeContext } from "../contexts/RecipeContext";
-//import "dotenv/config";
+// import { VisualContext } from "../contexts/VisualContext";
 
 export default function SeasonIngredients() {
   const [results, setResults] = useState([]);
@@ -14,6 +14,10 @@ export default function SeasonIngredients() {
   const { recipes, setRecipes } = useContext(RecipeContext);
   const [recipesLoaded, setRecipesLoaded] = useState(false);
   let navigate = useNavigate();
+
+  const { checkIngredientCard, setCheckIngredientCard } = useContext(
+    VisualContext
+  );
 
   const clickSeasonal = (e) => {
     const ingredientIndex = e.target.getAttribute("id");
@@ -154,7 +158,11 @@ export default function SeasonIngredients() {
       <Box sx={allIngredientsBoxStyle}>
         {seasonal.map((e) => (
           <div onClick={clickSeasonal} key={e.id} id={e.id}>
-            <IngredientCard name={e.name} id={e.id} />
+            <IngredientCard
+              name={e.name}
+              id={e.id}
+              checkIngredientCard={checkIngredientCard}
+            />
           </div>
         ))}
       </Box>
