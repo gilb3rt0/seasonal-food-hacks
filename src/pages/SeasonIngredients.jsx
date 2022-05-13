@@ -1,13 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Box, Button, Divider } from "@mui/material";
 import IngredientCard from "../components/IngredientCard";
+import { RecipeContext } from "../contexts/RecipeContext";
+//import "dotenv/config";
 
 export default function SeasonIngredients() {
   const [results, setResults] = useState([]);
   const [seasonal, setSeasonal] = useState([]);
   const [currentIngredients, setCurrentIngredients] = useState([]);
   const [queryList, setQueryList] = useState([]);
+  const { recipes, setRecipes } = useContext(RecipeContext);
+  const [recipesLoaded, setRecipesLoaded] = useState(false);
+  let navigate = useNavigate();
 
   const clickSeasonal = (e) => {
     const ingredientIndex = e.target.getAttribute("id");
@@ -22,6 +28,7 @@ export default function SeasonIngredients() {
         return [...prev, item.name];
       });
       console.log(queryList);
+      console.log(process.env.API_KEY);
     } else {
       const tempArray = [...currentIngredients];
       const tempIndex = tempArray.findIndex(
@@ -46,7 +53,27 @@ export default function SeasonIngredients() {
     // thisDiv.classList
   };
 
-  const clickSearch = () => {};
+  const clickSearch = () => {
+    const searchTerm = queryList.toString().replace(/,/g, "%26");
+    console.log(searchTerm);
+    axios
+      .get(
+        `https://edamam-recipe-search.p.rapidapi.com/search?q=${searchTerm}`,
+        {
+          headers: {
+            "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com",
+            "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
+          },
+        }
+      )
+      .then((response) => {
+        setRecipes(response.data.hits);
+
+        setRecipesLoaded(true);
+
+        navigate("./recipes", { replace: true });
+      });
+  };
 
   useEffect(() => {
     axios

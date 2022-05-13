@@ -91,22 +91,26 @@
       "availability": [7, 8, 9]
     }
   ],
-  "vegetables": [{}],
+  "vegetables": [
+    { "id": 19, "name": "artichoke", "availability": [6, 7, 8] },
+    { "id": 20, "name": "aubergine", "availability": [5, 6, 7, 8, 9] },
+    { "id": 21, "name": "aubergine", "availability": [5, 6, 7, 8, 9] }
+  ],
   "nuts": [
     {
       "id": 1,
       "name": "chestnuts",
-      "availability": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0]
+      "availability": [8, 9]
     },
     {
       "id": 2,
       "name": "hazelnuts",
-      "availability": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0]
+      "availability": [8, 9, 10]
     },
     {
       "id": 3,
       "name": "walnuts",
-      "availability": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0]
+      "availability": [8, 9, 10]
     }
   ]
 }
