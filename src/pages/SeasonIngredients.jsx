@@ -89,7 +89,49 @@ export default function SeasonIngredients() {
       .get("http://localhost:3002/fruits")
       .then((response) => {
         //console.log(response.data);
-        setResults(response.data);
+        setResults((prev) => {
+          return [...prev, ...response.data];
+        });
+        console.log(results);
+        const d = new Date();
+        const currentMonth = d.getMonth();
+        console.log(currentMonth);
+        response.data.forEach((item) => {
+          if (item.availability.includes(currentMonth)) {
+            setSeasonal((prev) => {
+              return [...prev, item];
+            });
+          }
+        });
+      })
+      .catch((err) => console.error(err));
+    axios
+      .get("http://localhost:3002/nuts")
+      .then((response) => {
+        //console.log(response.data);
+        setResults((prev) => {
+          return [...prev, ...response.data];
+        });
+        console.log(results);
+        const d = new Date();
+        const currentMonth = d.getMonth();
+        console.log(currentMonth);
+        response.data.forEach((item) => {
+          if (item.availability.includes(currentMonth)) {
+            setSeasonal((prev) => {
+              return [...prev, item];
+            });
+          }
+        });
+      })
+      .catch((err) => console.error(err));
+    axios
+      .get("http://localhost:3002/vegetables")
+      .then((response) => {
+        //console.log(response.data);
+        setResults((prev) => {
+          return [...prev, ...response.data];
+        });
         console.log(results);
         const d = new Date();
         const currentMonth = d.getMonth();
@@ -117,6 +159,8 @@ export default function SeasonIngredients() {
     borderRadius: "5px",
     backgroundColor: "light-grey",
     marginTop: "1rem",
+    marginBottom: "1rem",
+    paddingBottom: "1rem",
   };
 
   const allIngredientsBoxStyle = {
@@ -125,12 +169,14 @@ export default function SeasonIngredients() {
     flexWrap: "wrap",
     justifyContent: "center",
     gap: "10px",
-    height: "60vh",
+    height: "auto",
     width: "90vw",
     border: "2px solid grey",
     borderRadius: "5px",
     backgroundColor: "light-grey",
     marginTop: "1rem",
+    marginBottom: "1rem",
+    paddingBottom: "1rem",
   };
 
   return (

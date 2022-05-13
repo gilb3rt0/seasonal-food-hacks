@@ -94,7 +94,21 @@
   "vegetables": [
     { "id": 19, "name": "artichoke", "availability": [6, 7, 8] },
     { "id": 20, "name": "aubergine", "availability": [5, 6, 7, 8, 9] },
-    { "id": 21, "name": "aubergine", "availability": [5, 6, 7, 8, 9] }
+    {
+      "id": 21,
+      "name": "cauliflower",
+      "availability": [3, 4, 5, 6, 7, 8, 9, 10, 11]
+    },
+    {
+      "id": 22,
+      "name": "broccoli",
+      "availability": [4, 5, 6, 7, 8, 9, 10, 11]
+    },
+    {
+      "id": 23,
+      "name": "beans",
+      "availability": [4, 5, 6, 7, 8, 9, 10, 11]
+    }
   ],
   "nuts": [
     {
