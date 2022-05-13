@@ -1,19 +1,19 @@
-#recipe-container {
-  width: 6rem;
-  height: 6rem;
-  display: inline-block;
-  margin-right: 0.5rem;
+.recipe-container {
+  width: 6rem !important;
+  height: 6rem !important;
+  display: inline-block !important;
+  margin-right: 0.5rem !important;
 }
-#recipe-title {
-  text-align: center;
-  font-weight: bold;
-  font-size: 0.6rem;
-  margin-block-start: 0rem;
-  margin-block-end: 0;
-  word-wrap: break-word;
+.recipe-title {
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 0.6rem !important;
+  margin-block-start: 0rem !important;
+  margin-block-end: 0 !important;
+  word-wrap: break-word !important;
 }
 
-#recipe-img {
-  width: 6rem;
-  height: 4rem;
+.recipe-img {
+  width: 6rem !important;
+  height: 4rem !important;
 }

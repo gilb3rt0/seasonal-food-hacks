@@ -4,7 +4,6 @@ import axios from "axios";
 import { Box, Button, Divider } from "@mui/material";
 import IngredientCard from "../components/IngredientCard";
 import { RecipeContext } from "../contexts/RecipeContext";
-// import { VisualContext } from "../contexts/VisualContext";
 
 export default function SeasonIngredients() {
   const [results, setResults] = useState([]);
@@ -14,10 +13,6 @@ export default function SeasonIngredients() {
   const { recipes, setRecipes } = useContext(RecipeContext);
   const [recipesLoaded, setRecipesLoaded] = useState(false);
   let navigate = useNavigate();
-
-  const { checkIngredientCard, setCheckIngredientCard } = useContext(
-    VisualContext
-  );
 
   const clickSeasonal = (e) => {
     const ingredientIndex = e.target.getAttribute("id");
@@ -32,7 +27,6 @@ export default function SeasonIngredients() {
         return [...prev, item.name];
       });
       console.log(queryList);
-      console.log(process.env.API_KEY);
     } else {
       const tempArray = [...currentIngredients];
       const tempIndex = tempArray.findIndex(
@@ -40,6 +34,12 @@ export default function SeasonIngredients() {
       );
       tempArray.splice(tempIndex, 1);
       setCurrentIngredients(tempArray);
+      const tempArray2 = [...queryList];
+      const tempIndex2 = tempArray2.findIndex(
+        (element) => element.id == ingredientIndex
+      );
+      tempArray2.splice(tempIndex2, 1);
+      setQueryList(tempArray2);
     }
   };
 
@@ -51,6 +51,13 @@ export default function SeasonIngredients() {
     );
     tempArray.splice(tempIndex, 1);
     setCurrentIngredients(tempArray);
+    const tempArray2 = [...queryList];
+    const tempIndex2 = tempArray2.findIndex(
+      (element) => element.id == ingredientIndex
+    );
+    tempArray2.splice(tempIndex2, 1);
+    setQueryList(tempArray2);
+    console.log(queryList);
     const thisDiv = document.getElementById(ingredientIndex).firstChild;
     console.log(thisDiv);
     // if (thisDiv.classList.remove)
@@ -72,9 +79,7 @@ export default function SeasonIngredients() {
       )
       .then((response) => {
         setRecipes(response.data.hits);
-
         setRecipesLoaded(true);
-
         navigate("./recipes", { replace: true });
       });
   };
@@ -158,11 +163,7 @@ export default function SeasonIngredients() {
       <Box sx={allIngredientsBoxStyle}>
         {seasonal.map((e) => (
           <div onClick={clickSeasonal} key={e.id} id={e.id}>
-            <IngredientCard
-              name={e.name}
-              id={e.id}
-              checkIngredientCard={checkIngredientCard}
-            />
+            <IngredientCard name={e.name} id={e.id} />
           </div>
         ))}
       </Box>

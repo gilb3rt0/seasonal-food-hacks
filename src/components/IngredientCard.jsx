@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import {
   CardActionArea,
@@ -7,13 +7,10 @@ import {
   Typography,
 } from "@mui/material";
 import "./IngredientCard.css";
-// import { VisualContext } from "../contexts/VisualContext";
 
 export default function IngredientCard(props) {
-  const { name, id, checkIngredientCard, setCheckIngredientCard } = props;
-  // const { checkIngredientCard, setCheckIngredientCard } = useContext(
-  //   VisualContext
-  // );
+  const { name, id } = props;
+  const [checkIngredientCard, setCheckIngredientCard] = useState(true);
 
   const handleClick = (e) => {
     console.log(e.target.getAttribute("id"));

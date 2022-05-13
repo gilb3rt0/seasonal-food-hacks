@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Divider from "@mui/material/Divider";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -10,8 +10,14 @@ import { RecipeContext } from "../contexts/RecipeContext";
 
 function RecipeSuggestions() {
   const { recipes } = useContext(RecipeContext);
+  const [selected, setSelected] = useState(recipes[0]);
   console.log(recipes);
   const navigate = useNavigate();
+
+  const handleSelect = (e) => {
+    setSelected(recipes[e.target.id]);
+  };
+
   return (
     <div id="rec-suggestion-main-container">
       <ChevronLeftIcon
@@ -25,59 +31,29 @@ function RecipeSuggestions() {
       />
       <br />
       <Filter />
-      {/* Map through recipes, below is just an example */}
       <div id="recipe-slider">
-        <RecipeCardSmall
-          className="recipe-card"
-          img={
-            "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505"
-          }
-          recipeTitle={"Recipe Title"}
-        />
-        <RecipeCardSmall
-          className="recipe-card"
-          img={
-            "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505"
-          }
-          recipeTitle={"Recipe Title"}
-        />
-        <RecipeCardSmall
-          className="recipe-card"
-          img={
-            "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505"
-          }
-          recipeTitle={"Recipe Title"}
-        />
-        <RecipeCardSmall
-          id="recipe-card"
-          img={
-            "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505"
-          }
-          recipeTitle={"Recipe Title"}
-        />
-        <RecipeCardSmall
-          className="recipe-card"
-          img={
-            "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505"
-          }
-          recipeTitle={"Recipe Title"}
-        />
-        <RecipeCardSmall
-          className="recipe-card"
-          img={
-            "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505"
-          }
-          recipeTitle={"Recipe Title"}
-        />
+        {recipes
+          ? recipes.map((r, index) => (
+              <RecipeCardSmall
+                key={index}
+                img={r.recipe.image}
+                recipeTitle={r.recipe.label}
+                handleSelect={handleSelect}
+                id={index}
+                className="recipe-card"
+              />
+            ))
+          : null}
       </div>
       <Divider id="divider" />
-      <RecipePreview
-        img={
-          "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505"
-        }
-        recipeTitle={"Test test test"}
-        ingredients={"test test test test"}
-      />
+      {selected ? (
+        <RecipePreview
+          img={selected.recipe.image}
+          recipeTitle={selected.recipe.label}
+          ingredients={selected.recipe.ingredients}
+          recipeUrl={selected.recipe.url}
+        />
+      ) : null}
     </div>
   );
 }
