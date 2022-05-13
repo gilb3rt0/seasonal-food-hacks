@@ -14,15 +14,16 @@
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "fs": "^0.0.1-security",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-scripts": "^5.0.1",
     "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "db": "json-server --watch db.json --port 3002 --routes routes.json",
+    "db": "json-server --watch db.json --port 5002 --routes routes.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -46,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@svgr/webpack": "^6.2.1"
+    "@svgr/webpack": "^6.2.1",
+    "dotenv-webpack": "^7.1.0"
   }
 }

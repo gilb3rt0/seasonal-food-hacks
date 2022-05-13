@@ -52,7 +52,7 @@ function SeasonIngredients() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/fruits")
+      .get("http://localhost:5002/fruits")
       .then((response) => {
         //console.log(response.data);
         setResults(response.data);
@@ -110,11 +110,10 @@ function SeasonIngredients() {
       .get(
         `https://edamam-recipe-search.p.rapidapi.com/search?q=${searchTerm}`,
         {
-          /* headers: {
+          headers: {
             "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com",
-            "X-RapidAPI-Key":
-              To Do: store in env. variable,
-          }, */
+            "X-RapidAPI-Key": "7bc5264ffemsh61b3494612049efp18b2c0jsnab8c5ef296f4",
+          },
         }
       )
       .then((response) => {
@@ -164,4 +163,4 @@ function SeasonIngredients() {
     </div>
   );
 }
-export default SeasonIngredients
+export default SeasonIngredients;

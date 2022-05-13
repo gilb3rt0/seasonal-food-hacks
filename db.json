@@ -37,12 +37,12 @@
     },
     {
       "id": 8,
-      "name": "red currants",
+      "name": "redCurrants",
       "availability": [5, 6, 7, 8, 9]
     },
     {
       "id": 9,
-      "name": "black currants",
+      "name": "blackCurrants",
       "availability": [5, 6, 7, 8, 9]
     },
     {
@@ -52,7 +52,7 @@
     },
     {
       "id": 11,
-      "name": "mirabelle plums",
+      "name": "mirabellePlums",
       "availability": [6, 7, 8, 9]
     },
     {

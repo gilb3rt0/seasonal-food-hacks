@@ -7,7 +7,8 @@ import {
   Typography,
 } from "@mui/material";
 import "./IngredientCard.css";
-
+import FoodIconList from "./foodIconList";
+// import * as props from '../assets/images/food-icons'
 export default function IngredientCard(props) {
   const [checkIngredientCard, setCheckIngredientCard] = useState(true);
   const { name, id } = props;
@@ -16,7 +17,13 @@ export default function IngredientCard(props) {
     setCheckIngredientCard(!checkIngredientCard);
     console.log(checkIngredientCard);
   };
-
+  const iconArr = [];
+  for (const icon in FoodIconList) {
+    iconArr.push(icon);
+  }
+  // const SvgList = FoodIconList.map((icon, n) => {
+  //   console.log(icon = props.name, n)
+  // })
   const styleDefault = {
     borderRadius: "15px",
     height: "5rem",
@@ -40,7 +47,11 @@ export default function IngredientCard(props) {
     alignItems: "center",
     marginTop: "0.5rem",
   };
-
+  console.log(FoodIconList);
+  const test = Object.keys(FoodIconList).find(
+    (key) => FoodIconList.key == name
+  );
+  console.log(test);
   return (
     <Card
       id={id}
@@ -58,16 +69,9 @@ export default function IngredientCard(props) {
             flexDirection: "column",
           }}
         >
-          <CardMedia
-            id={id}
-            sx={{
-              objectFit: "scale-down",
-              width: 50,
-              height: 50,
-            }}
-            component="img"
-            image="https://icon-library.com/images/vegetable-icon-png/vegetable-icon-png-19.jpg"
-          />
+            <div onClick={handleClick} id={id}>
+            {React.createElement(FoodIconList[name],  null)}
+            </div>
 
           <Typography
             id={id}
