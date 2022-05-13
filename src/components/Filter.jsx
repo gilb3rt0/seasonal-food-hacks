@@ -13,9 +13,7 @@ export default function Filter() {
           className="filter-element"
           label="vegan"
           variant="outlined"
-        >
-          test
-        </Chip>
+        />
         <Chip
           sx={{ height: 20 }}
           className="filter-element"

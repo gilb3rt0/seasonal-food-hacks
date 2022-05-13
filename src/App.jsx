@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FoodIcons from "./components/foodIcons";
 import RecipeSuggestions from "./pages/RecipeSuggestions";
 import SeasonIngredients from "./pages/SeasonIngredients";
+import { RecipeContextProvider } from "./contexts/RecipeContext";
 
 function App() {
 
@@ -11,10 +12,12 @@ function App() {
   return (
     <Router>
       <div>
-        <Routes>
-          <Route path="/" element={<SeasonIngredients />} />
-          <Route path="/recipes" element={<RecipeSuggestions />} />
-        </Routes>
+        <RecipeContextProvider>
+          <Routes>
+            <Route path="/" element={<SeasonIngredients />} />
+            <Route path="/recipes" element={<RecipeSuggestions />} />
+          </Routes>
+        </RecipeContextProvider>
       </div>
     </Router>
   );

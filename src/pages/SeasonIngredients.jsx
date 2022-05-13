@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Box, Button, Divider } from "@mui/material";
 import IngredientCard from "../components/IngredientCard";
-import Seasonal from "../components/Seasonsal";
-import { ConstructionOutlined } from "@mui/icons-material";
+import { RecipeContext } from "../contexts/RecipeContext";
 
 function SeasonIngredients() {
   const [results, setResults] = useState([]);
   const [seasonal, setSeasonal] = useState([]);
   const [currentIngredients, setCurrentIngredients] = useState([]);
   const [queryList, setQueryList] = useState([]);
+  const { recipes, setRecipes } = useContext(RecipeContext);
+  const [recipesLoaded, setRecipesLoaded] = useState(false);
+  let navigate = useNavigate();
 
   const clickSeasonal = (e) => {
     const ingredientIndex = e.target.getAttribute("id");
@@ -31,6 +34,12 @@ function SeasonIngredients() {
       );
       tempArray.splice(tempIndex, 1);
       setCurrentIngredients(tempArray);
+      const tempArray2 = [...queryList];
+      const tempIndex2 = tempArray2.findIndex(
+        (element) => element.id == ingredientIndex
+      );
+      tempArray2.splice(tempIndex2, 1);
+      setQueryList(tempArray2);
     }
   };
 
@@ -42,20 +51,87 @@ function SeasonIngredients() {
     );
     tempArray.splice(tempIndex, 1);
     setCurrentIngredients(tempArray);
+    const tempArray2 = [...queryList];
+    const tempIndex2 = tempArray2.findIndex(
+      (element) => element.id == ingredientIndex
+    );
+    tempArray2.splice(tempIndex2, 1);
+    setQueryList(tempArray2);
+    console.log(queryList);
     const thisDiv = document.getElementById(ingredientIndex).firstChild;
     console.log(thisDiv);
     // if (thisDiv.classList.remove)
     // thisDiv.classList
   };
 
-  const clickSearch = () => {};
+  const clickSearch = () => {
+    const searchTerm = queryList.toString().replace(/,/g, "%26");
+    console.log(searchTerm);
+    axios
+      .get(
+        `https://edamam-recipe-search.p.rapidapi.com/search?q=${searchTerm}`,
+        {
+          headers: {
+            "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com",
+            "X-RapidAPI-Key": "7bc5264ffemsh61b3494612049efp18b2c0jsnab8c5ef296f4",
+          },
+        }
+      )
+      .then((response) => {
+        setRecipes(response.data.hits);
+        setRecipesLoaded(true);
+        navigate("./recipes", { replace: true });
+      });
+  };
 
   useEffect(() => {
     axios
       .get("http://localhost:5002/fruits")
       .then((response) => {
         //console.log(response.data);
-        setResults(response.data);
+        setResults((prev) => {
+          return [...prev, ...response.data];
+        });
+        console.log(results);
+        const d = new Date();
+        const currentMonth = d.getMonth();
+        console.log(currentMonth);
+        response.data.forEach((item) => {
+          if (item.availability.includes(currentMonth)) {
+            setSeasonal((prev) => {
+              return [...prev, item];
+            });
+          }
+        });
+      })
+      .catch((err) => console.error(err));
+    axios
+      .get("http://localhost:5002/nuts")
+      .then((response) => {
+        //console.log(response.data);
+        setResults((prev) => {
+          return [...prev, ...response.data];
+        });
+        console.log(results);
+        const d = new Date();
+        const currentMonth = d.getMonth();
+        console.log(currentMonth);
+        response.data.forEach((item) => {
+          if (item.availability.includes(currentMonth)) {
+            setSeasonal((prev) => {
+              return [...prev, item];
+            });
+          }
+        });
+      })
+      .catch((err) => console.error(err));
+    axios
+      .get("http://localhost:5002/vegetables")
+      .then((response) => {
+        //console.log(response.data);
+        setResults((prev) => {
+          return [...prev, ...response.data];
+        });
         console.log(results);
         const d = new Date();
         const currentMonth = d.getMonth();
@@ -83,6 +159,8 @@ function SeasonIngredients() {
     borderRadius: "5px",
     backgroundColor: "light-grey",
     marginTop: "1rem",
+    marginBottom: "1rem",
+    paddingBottom: "1rem",
   };
 
   const allIngredientsBoxStyle = {
@@ -91,40 +169,15 @@ function SeasonIngredients() {
     flexWrap: "wrap",
     justifyContent: "center",
     gap: "10px",
-    height: "60vh",
+    height: "auto",
     width: "90vw",
     border: "2px solid grey",
     borderRadius: "5px",
     backgroundColor: "light-grey",
     marginTop: "1rem",
+    marginBottom: "1rem",
+    paddingBottom: "1rem",
   };
-
-  const [recipes, setRecipes] = useState();
-  const [recipesLoaded, setRecipesLoaded] = useState(false);
-
-  // just for testing
-  const searchTerm = "potatoes";
-
-  const handleClick = () => {
-    axios
-      .get(
-        `https://edamam-recipe-search.p.rapidapi.com/search?q=${searchTerm}`,
-        {
-          headers: {
-            "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com",
-            "X-RapidAPI-Key": "7bc5264ffemsh61b3494612049efp18b2c0jsnab8c5ef296f4",
-          },
-        }
-      )
-      .then((response) => {
-        setRecipes(response.data.hits);
-        setRecipesLoaded(true);
-      });
-  };
-
-  console.log(recipes, recipesLoaded);
-
-  // To Do: Build the context to store recipe results
 
   return (
     <div
@@ -145,9 +198,9 @@ function SeasonIngredients() {
         ))}
       </Box>
       <Button
-        onClick={handleClick}
         sx={{ width: "150px", borderRadius: "20px" }}
         variant="contained"
+        onClick={clickSearch}
       >
         FIND RECIPES
       </Button>

@@ -9,12 +9,16 @@ import {
 import "./IngredientCard.css";
 import FoodIconList from "./foodIconList";
 export default function IngredientCard(props) {
-  const [checkIngredientCard, setCheckIngredientCard] = useState(true);
   const { name, id } = props;
+  const [checkIngredientCard, setCheckIngredientCard] = useState(true);
 
-  const handleClick = () => {
-    setCheckIngredientCard(!checkIngredientCard);
-    console.log(checkIngredientCard);
+  const handleClick = (e) => {
+    console.log(e.target.getAttribute("id"));
+    console.log(id);
+    if (e.target.getAttribute("id") == id) {
+      setCheckIngredientCard(!checkIngredientCard);
+      console.log(checkIngredientCard);
+    }
   };
   const iconArr = [];
   for (const icon in FoodIconList) {

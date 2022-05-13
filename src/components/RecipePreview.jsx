@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import "./RecipePreview.css";
 
@@ -16,9 +16,9 @@ function RecipePreview(props) {
       <h3 id="recipe-preview-title">{recipeTitle}</h3>
       <div id="ingredients-container">
         <ul id="ingredients-list">
-          <li className="ingredients-items">
-            Here: map through ingredients array elements
-          </li>
+          {ingredients.map((ing) => (
+            <li className="ingredients-items">{ing.text}</li>
+          ))}
         </ul>
         <a
           id="link-recipe"
