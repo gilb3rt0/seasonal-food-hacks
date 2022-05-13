@@ -8,6 +8,7 @@ import { RecipeContextProvider } from "./contexts/RecipeContext";
 import themeGlobal from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
         <div>
           <RecipeContextProvider>
             <Routes>
-              <Route path="/" element={<SeasonIngredients />} />
-              <Route path="/recipes" element={<RecipeSuggestions />} />
+              <Route path="/" element={<Homepage />}></Route>
+              <Route path="/choose" element={<SeasonIngredients />} />
+              <Route path="/choose/recipes" element={<RecipeSuggestions />} />
             </Routes>
           </RecipeContextProvider>
         </div>
