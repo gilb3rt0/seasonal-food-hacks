@@ -1,0 +1,112 @@
+{
+  "fruits": [
+    {
+      "id": 1,
+      "name": "apples",
+      "availability": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    },
+    {
+      "id": 2,
+      "name": "apricots",
+      "availability": [5, 6, 7]
+    },
+    {
+      "id": 3,
+      "name": "pears",
+      "availability": [0, 1, 2, 7, 8, 9, 10, 11]
+    },
+    {
+      "id": 4,
+      "name": "blackberries",
+      "availability": [5, 6, 7, 8, 9]
+    },
+    {
+      "id": 5,
+      "name": "strawberries",
+      "availability": [3, 4, 5, 6, 7, 8, 9, 10, 11]
+    },
+    {
+      "id": 6,
+      "name": "blueberries",
+      "availability": [5, 6, 7, 8, 9]
+    },
+    {
+      "id": 7,
+      "name": "raspberries",
+      "availability": [4, 5, 6, 7, 8, 9, 10]
+    },
+    {
+      "id": 8,
+      "name": "red currants",
+      "availability": [5, 6, 7, 8, 9]
+    },
+    {
+      "id": 9,
+      "name": "black currants",
+      "availability": [5, 6, 7, 8, 9]
+    },
+    {
+      "id": 10,
+      "name": "cherries",
+      "availability": [5, 6, 7]
+    },
+    {
+      "id": 11,
+      "name": "mirabelle plums",
+      "availability": [6, 7, 8, 9]
+    },
+    {
+      "id": 12,
+      "name": "peaches",
+      "availability": [6, 7, 8]
+    },
+    {
+      "id": 13,
+      "name": "nectarines",
+      "availability": [6, 7, 8]
+    },
+    {
+      "id": 14,
+      "name": "plums",
+      "availability": [5, 6, 7, 8, 9]
+    },
+    {
+      "id": 15,
+      "name": "cranberries",
+      "availability": [6, 7, 8, 9]
+    },
+    {
+      "id": 16,
+      "name": "quince",
+      "availability": [9, 10, 11]
+    },
+    {
+      "id": 17,
+      "name": "gooseberries",
+      "availability": [5, 6, 7]
+    },
+    {
+      "id": 18,
+      "name": "grapes",
+      "availability": [7, 8, 9]
+    }
+  ],
+  "vegetables": [{}],
+  "nuts": [
+    {
+      "id": 1,
+      "name": "chestnuts",
+      "availability": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0]
+    },
+    {
+      "id": 2,
+      "name": "hazelnuts",
+      "availability": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0]
+    },
+    {
+      "id": 3,
+      "name": "walnuts",
+      "availability": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0]
+    }
+  ]
+}
